@@ -1,30 +1,24 @@
 language: node_js
 node_js:
-  - "node"
+- node
 dist: trusty
 sudo: false
-
-# safelist
 branches:
   only:
   - master
   - develop
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 install:
-  - npm install -g yarn
-
+- npm install -g yarn
 script:
-  - yarn --no-progress
-  - yarn lint
-  - yarn build --no-progress
+- yarn --no-progress
+- yarn lint
+- yarn build --no-progress
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/juanjo-web-page
+  provider: firebase
+  token:
+    secure: IRNbbMH5wDk4Np5Cy2lSuZVSyakN4sXO7TfeH2PFmv6OiuC9LmRI+ZjD6xpjShKhYUOnsDJDozniboOudA+2A2u6XwHDVsAelIwrPg7RfP6ufEqBmd7RMhpXRVvAWK6GQrrJDZuYwqC5NAl5COMX9+kAcz4ZHHx3DpQHENNuwQ/p0Aq5eNm4Lnx3u4peevmUultbonIKveFjODNQDIQ+/qsYaV0aM2YtiB/d+kdeuz2BErq0ajMG/qf519tVOJ2rFnL9ZL3cSv7lr4j+UHJEzglOlxQqo6GQZ4jfCxlW76QlSllbvqMYbQgAB030OQiC90Sst33hVSmjdVtBmErrumUr4Tb7MdWCjmLARoKKkeCQBzT3VGpNBk6SQMwbyp/pPFpHPDzYR/+n1PiojoTGTsfPgOwtA07owMCpD1nZRKOyKa6YfS/Kgcl1YjtfO+e/HEudsGH0yGVp0axWye8bBCd5IJ8xLXPyE1glwRvJnRCF47g+hALcNyLJNS4wJbHAG4b+YhrLLN2oWL1Ht02nEXWRYhYOwNIRxdrAFNQeZ7BotXIaFagR4qnHmFbAiCZH1BlOoufEc9o4Li3MRrJlzyTWIK5gib2omw1QSEBjJYjCJT4EO9cKnk8Kd4OMvGL2QXbbYbU5FXc4XIT7ezLbGRDmix3rPAXByytJBjoch9A= 
   on:
     branch: master
