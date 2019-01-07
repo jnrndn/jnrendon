@@ -1,0 +1,23 @@
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.content {
+  margin: auto;
+  text-align: center;
+  
+  .profile {
+    width: 250px;
+    border-radius: 50%;
+  }
+
+  .bio {
+    max-width: 500px;
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
