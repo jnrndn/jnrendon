@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { firebaseConfig } from '../environments/firebase.config';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,7 @@ import { SocialComponent } from './social/social.component';
     AppRoutingModule,
     MaterialModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]
